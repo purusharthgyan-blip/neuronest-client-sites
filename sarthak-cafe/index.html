@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Cafe - Your Cozy Escape in Chembur</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Font Definitions for Tailwind CDN */
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-playfair-display { font-family: 'Playfair Display', serif; }
+
+        /* Custom Tailwind Colors via arbitrary values or direct CSS variables */
+        /* For direct use in Tailwind classes, use like bg-[#3B1F0A] */
+        :root {
+            --color-primary: #3B1F0A;
+            --color-secondary: #D4A96A;
+            --color-accent: #F0E6D3;
+            --color-background: #FAF6F1;
+        }
+
+        /* Base styles using custom fonts and background */
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary); /* Default text color */
+            font-family: 'Inter', sans-serif; /* Fallback for good measure */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif; /* Fallback for good measure */
+        }
+    </style>
+</head>
+<body class="bg-[#FAF6F1] text-[#3B1F0A] font-inter">
+
+    <!-- Header (Simple, just the logo/name) -->
+    <header class="py-4 px-6 md:px-12 sticky top-0 z-50 bg-[#FAF6F1] shadow-sm text-center">
+        <div class="text-3xl md:text-4xl font-bold text-[#3B1F0A] font-playfair-display">Sarthak Cafe</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');">
+        <div class="absolute inset-0 bg-[#3B1F0A] opacity-60"></div> <!-- Overlay for text readability -->
+        <div class="relative z-10 text-[#F0E6D3] px-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 font-playfair-display">Sarthak Cafe</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-inter">Crafting moments, one perfect cup at a time.</p>
+            <a href="#highlights" class="inline-block bg-[#D4A96A] text-[#3B1F0A] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-80 transition duration-300 transform hover:scale-105">
+                Explore Our Menu
+            </a>
+        </div>
+    </section>
+
+    <!-- About/Story Section -->
+    <section id="about" class="py-16 px-6 md:px-12 max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6 text-[#3B1F0A] font-playfair-display">Our Story</h2>
+        <p class="text-lg md:text-xl leading-relaxed text-[#3B1F0A] font-inter">
+            At Sarthak Cafe, we believe in crafting moments as much as we craft coffee. Nestled in the heart of Vashinaka, Chembur, our cozy space is where rich aromas meet heartwarming conversations. Every bean is carefully selected, every pastry baked with passion, ensuring a delightful experience from the first sip to the last bite. Come, find your perfect escape with us.
+        </p>
+    </section>
+
+    <!-- Highlights Section (Menu/Services) -->
+    <section id="highlights" class="py-16 px-6 md:px-12 bg-[#F0E6D3]">
+        <h2 class="text-4xl font-bold text-center mb-12 text-[#3B1F0A] font-playfair-display">Our Offerings</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Item 1: Artisan Coffee Blends -->
+            <div class="bg-[#FAF6F1] p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <h3 class="text-2xl font-bold mb-3 text-[#D4A96A] font-playfair-display">Artisan Coffee Blends</h3>
+                <p class="text-[#3B1F0A] font-inter">Savor our expertly crafted espresso-based drinks, from rich cappuccinos to velvety lattes, made with ethically sourced beans.</p>
+            </div>
+            <!-- Item 2: Freshly Baked Pastries -->
+            <div class="bg-[#FAF6F1] p-8 rounded-lg shadow-md hover:shadow-xl transition duration
