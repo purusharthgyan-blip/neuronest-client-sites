@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Cafe - Your Cozy Corner in Chembur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#4A2C2A',
+                        cream: '#F5F0E1',
+                        gold: '#D4AF37',
+                        slate: '#36454F',
+                        rose: '#B22222',
+                        latte: '#EADBC8',
+                        caramel: '#CD853F',
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body text-slate bg-cream">
+
+    <!-- Sticky Nav -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold text-espresso hover:text-gold transition-colors">Sarthak Cafe</a>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+919769894340" class="hidden md:block text-slate hover:text-gold transition-colors">Call Us: 9769894340</a>
+                <a href="https://wa.me/919769894340" target="_blank" class="bg-rose text-white px-6 py-2 rounded-full shadow-lg hover:bg-espresso transition-all duration-300 transform hover:scale-105">
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center text-center px-4 pt-16 bg-[url('https://images.unsplash.com/photo-1511920170033-f8bd7beb0da5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-fixed">
+        <div class="absolute inset-0 bg-espresso/60"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-white scroll-reveal">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 drop-shadow-lg">
+                Your Daily Ritual, Elevated.
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
+                Experience the perfect blend of rich flavors and warm ambiance at Sarthak Cafe, your cozy escape in Vashinaka, Chembur.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="https://wa.me/919769894340" target="_blank" class="bg-gold text-espresso px-8 py-3 rounded-full text-lg font-semibold shadow-xl hover:bg-cream transition-all duration-300 transform hover:scale-105">
+                    Order on WhatsApp
+                </a>
+                <a href="#offerings" class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-espresso transition-all duration-300 transform hover:scale-105">
+                    Explore Our Menu
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <section class="bg-latte py-8 md:py-12 shadow-inner">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-around items-center text-center space-y-6 md:space-y-0 scroll-reveal">
+            <div class="flex flex-col items-center">
+                <span class="text-4xl text-espresso mb-2">☕</span>
+                <p class="font-semibold text-slate">Freshly Brewed Coffees</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-4xl text-espresso mb-2">🥐</span>
+                <p class="font-semibold text-slate">Delicious Snacks & Bites</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-4xl text-espresso mb-2">✨</span>
+                <p class="font-semibold text-slate">Cozy & Welcoming Ambiance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Story Section -->
+    <section class="py-16 md:py-24 bg-cream">
+        <div class="container mx-auto px-4 max-w-3xl text-center scroll-reveal">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-espresso mb-6">Our Story, Your Coffee</h2>
+            <p class="text-lg leading-relaxed text-slate mb-4">
+                Sarthak Cafe was born from a simple passion: to create a warm, inviting space where friends and neighbors in Vashinaka, Chembur can gather, unwind, and savor exceptional coffee. We believe every cup tells a story, and ours is brewed with love, quality ingredients, and a commitment to making your day a little brighter.
+            </p>
+            <p class="text-lg leading-relaxed text-slate">
+                From our perfectly pulled espresso shots to our delightful pastries, we strive to offer a moment of joy in your busy schedule. Come in, relax, and let us serve you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Highlights/Offerings Section -->
+    <section id="offerings" class="py-16 md:py-24 bg-latte">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-espresso text-center mb-12 scroll-reveal">Our Signature Delights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group scroll-reveal">
+                    <div class="text-5xl text-gold mb-4 text-center group-hover:scale-110 transition-transform">☕</div>
+                    <h3 class="font-display text-xl font-semibold text-espresso mb-2 text-center">Classic Espresso</h3>
+                    <p class="text-slate text-center">Rich, aromatic, and perfectly balanced. The heart of every great coffee experience.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group scroll-reveal">
+                    <div class="text-5xl text-gold mb-4 text-center group-hover:scale-110 transition-transform">🥪</div>
+                    <h3 class="font-display text-xl font-semibold text-espresso mb-2 text-center">Gourmet Sandwiches</h3>
+                    <p class="text-slate text-center">Freshly prepared with premium fillings, ideal for a quick and satisfying bite.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group scroll-reveal">
+                    <div class="text-5xl text-gold mb-4 text-center group-hover:scale-110 transition-transform">🍰</div>
+                    <h3 class="font-display text-xl font-semibold text-espresso mb-2 text-center">Decadent Pastries</h3>
+                    <p class="text-slate text-center">Sweet treats baked fresh daily, from croissants to artisanal cakes.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group scroll-reveal">
+                    <div class="text-5xl text-gold mb-4 text-center group-hover:scale-110 transition-transform">🥤</div>
+                    <h3 class="font-display text-xl font-semibold text-espresso mb-2 text-center">Refreshing Iced Teas</h3>
+                    <p class="text-slate text-center">Cool down with our selection of artisanal iced teas, perfect for any time.</p>
+                </div>
+                <!-- Item 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group scroll-reveal">
+                    <div class="text-5xl text-gold mb-4 text-center group-hover:scale-110 transition-transform">🍫</div>
+                    <h3 class="font-display text-xl font-semibold text-espresso mb-2 text-center">Signature Hot Chocolate</h3>
+                    <p class="text-slate text-center">Rich, creamy, and deeply satisfying. A hug in a mug for chocolate lovers.</p>
+                </div>
+                <!-- Item 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group scroll-reveal">
+                    <div class="text-5xl text-gold mb-4 text-center group-hover:scale-110 transition-transform">🌿</div>
+                    <h3 class="font-display text-xl font-semibold text-espresso mb-2 text-center">Healthy Smoothies</h3>
+                    <p class="text-slate text-center">Blended fresh with fruits and greens for a nutritious and delicious boost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-16 md:py-24 bg-cream">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-espresso text-center mb-12 scroll-reveal">What Our Guests Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-latte p-6 rounded-lg shadow-lg border-b-4 border-gold scroll-reveal">
+                    <p class="italic text-slate mb-4">"Sarthak Cafe is my go-to spot in Chembur. The coffee is consistently excellent, and their sandwiches are always fresh. The staff is so welcoming!"</p>
+                    <p class="font-semibold text-espresso">- Priya Sharma</p>
+                    <p class="text-sm text-slate">Local Resident</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-latte p-6 rounded-lg shadow-lg border-b-4 border-gold scroll-reveal">
+                    <p class="italic text-slate mb-4">"A true gem! I love spending my evenings here, unwinding with a book and a perfect latte. The ambiance is just right – cozy and vibrant."</p>
+                    <p class="font-semibold text-espresso">- Rohan Gupta</p>
+                    <p class="text-sm text-slate">Office Professional</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-latte p-6 rounded-lg shadow-lg border-b-4 border-gold scroll-reveal">
+                    <p class="italic text-slate mb-4">"Their hot chocolate is simply divine! My kids insist on coming here every weekend for their pastries. It's become our family's favorite cafe."</p>
+                    <p class="font-semibold text-espresso">- Anjali Singh</p>
+                    <p class="text-sm text-slate">Parent & Homemaker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 md:py-24 bg-latte">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-espresso text-center mb-12 scroll-reveal">A Glimpse of Our Cafe</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="aspect-video bg-gold/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-slate text-lg font-semibold">Cozy Interiors</span>
+                </div>
+                <div class="aspect-video bg-espresso/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-cream text-lg font-semibold">Barista at Work</span>
+                </div>
+                <div class="aspect-video bg-caramel/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-slate text-lg font-semibold">Fresh Pastries</span>
+                </div>
+                <div class="aspect-video bg-rose/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-cream text-lg font-semibold">Happy Customers</span>
+                </div>
+                <div class="aspect-video bg-slate/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-cream text-lg font-semibold">Outdoor Seating</span>
+                </div>
+                <div class="aspect-video bg-cream/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-slate text-lg font-semibold">Latte Art</span>
+                </div>
+                <div class="aspect-video bg-gold/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-slate text-lg font-semibold">Coffee Beans</span>
+                </div>
+                <div class="aspect-video bg-espresso/30 flex items-center justify-center rounded-lg shadow-md scroll-reveal">
+                    <span class="text-cream text-lg font-semibold">Community Spot</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location and Hours -->
+    <section class="py-16 md:py-24 bg-cream">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-espresso text-center mb-12 scroll-reveal">Find Us & Our Hours</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="scroll-reveal">
+                    <h3 class="font-display text-2xl font-semibold text-espresso mb-4">Visit Sarthak Cafe</h3>
+                    <p class="text-lg text-slate mb-2"><strong>Address:</strong> Vashinaka, Chembur</p>
+                    <p class="text-lg text-slate mb-4">Mumbai, Maharashtra</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Sarthak+Cafe+Vashinaka+Chembur" target="_blank" class="inline-block bg-rose text-white px-6 py-3 rounded-full shadow-lg hover:bg-espresso transition-all duration-300 transform hover:scale-105">
+                        Get Directions
+                    </a>
+                </div>
+                <div class="scroll-reveal">
+                    <h3 class="font-display text-2xl font-semibold text-espresso mb-4">Our Operating Hours</h3>
+                    <ul class="text-lg text-slate space-y-2">
+                        <li><strong>Monday - Friday:</strong> 8:00 AM - 10:00 PM</li>
+                        <li><strong>Saturday - Sunday:</strong> 9:00 AM - 11:00 PM</li>
+                        <li><em>Open all public holidays!</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="bg-espresso py-16 md:py-24 text-center shadow-inner">
+        <div class="container mx-auto px-4 scroll-reveal">
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-gold mb-8 leading-tight drop-shadow-md">
+                Ready for Your Perfect Coffee Break?
+            </h2>
+            <p class="text-xl text-cream mb-10 max-w-2xl mx-auto">
+                Join us at Sarthak Cafe and let us craft a moment of pure delight for you. We can't wait to welcome you!
+            </p>
+            <a href="https://wa.me/919769894340" target="_blank" class="bg-rose text-white px-10 py-4 rounded-full text-xl font-semibold shadow-2xl hover:bg-gold hover:text-espresso transition-all duration-300 transform hover:scale-105">
+                Chat with Us on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate py-12 text-cream text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-xl font-display font-bold mb-4">Sarthak Cafe</p>
+            <p class="mb-2">Vashinaka, Chembur</p>
+            <p class="mb-2">Phone: <a href="tel:+919769894340" class="hover:text-gold transition-colors">9769894340</a></p>
+            <p class="mb-4">WhatsApp: <a href="https://wa.me/919769894340" target="_blank" class="hover:text-gold transition-colors">Chat with us</a></p>
+            <p class="text-sm">&copy; 2023 Sarthak Cafe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scrollRevealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
