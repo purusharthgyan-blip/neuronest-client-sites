@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam Hotel Cafe - Experience Culinary Bliss in Chembur</title>
+    <meta name="description" content="Discover the finest cafe experience at Sangam Hotel in Chembur. Enjoy artisan coffee, gourmet meals, and delightful desserts in a cozy ambiance.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Design Token System */
+        :root {
+            /* Colors */
+            --primary-color: #A0522D; /* Sienna - warm earthy */
+            --secondary-color: #D2B48C; /* Tan - lighter, complementary */
+            --accent-color: #6B8E23; /* Olive Drab - fresh pop */
+            --text-dark: #2C3E50; /* Dark Slate Grey - almost black */
+            --text-medium: #555;
+            --text-light: #F8F8F8; /* Off-white for contrast */
+            --border-color: #E0E0E0; /* Light grey */
+            --bg-color: #FDFBF8; /* Very light cream background */
+            --surface-color: #FFFFFF; /* Pure white for cards/elements */
+            --overlay-dark: rgba(0, 0, 0, 0.6);
+            --overlay-light: rgba(255, 255, 255, 0.8);
+
+            /* Spacing */
+            --space-xxs: 4px;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-xxl: 64px;
+            --space-jumbo: 96px;
+
+            /* Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+
+            /* Box Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-btn-primary: 0 4px 10px rgba(160, 82, 45, 0.4); /* Primary color derived */
+            --shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+            /* Transitions */
+            --transition-duration: 0.3s;
+            --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-size-base: 16px;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--text-medium);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); } /* Hero Heading */
+        h2 { font-size: clamp(2rem, 4vw + 1rem, 3.5rem); } /* Section Heading */
+        h3 { font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); }
+        h4 { font-size: clamp(1.25rem, 2vw + 1rem, 1.75rem); }
+
+        p {
+            margin-bottom: var(--space-sm);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-duration) var(--ease-in-out);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--space-lg);
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-duration) var(--ease-in-out);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(0);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%) skewX(-30deg);
+            transition: transform var(--transition-duration) var(--ease-in-out);
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-btn-primary);
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(100%) skewX(-30deg);
+        }
+
+        .btn-secondary {
+            background-color: var(--surface-color);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Section Styling */
+        section {
+            padding: var(--space-xxl) var(--space-sm);
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: var(--space-jumbo) var(--space-lg);
+            }
+        }
+
+        /* Eyebrow Tags */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(var(--primary-color-rgb, 160, 82, 45), 0.1); /* Using RGB for transparency */
+            color: var(--primary-color);
+            padding: var(--space-xxs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-sm);
+        }
+
+        .eyebrow::before {
+            content: '•';
+            margin-right: var(--space-xs);
+            font-size: 1.2em;
+            line-height: 0;
+            color: var(--primary-color);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all var(--transition-duration) var(--ease-in-out);
+        }
+
+        .navbar.nav-scrolled {
+            padding: var(--space-xs) 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: none; /* Hidden by default on mobile */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: var(--space-lg);
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: var(--space-xxs);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width var(--transition-duration) var(--ease-in-out);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: none; /* Hidden by default on mobile */
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex; /* Visible on mobile */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-duration) var(--ease-in-out);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--surface-color);
+            transform: translateX(100%);
+            transition: transform var(--transition-duration) var(--ease-in-out);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu li {
+            margin-bottom: var(--space-lg);
+        }
+
+        .mobile-menu a {
+            font-size: 2rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .mobile-menu .btn {
+            margin-top: var(--space-md);
+            font-size: 1.2rem;
+            padding: var(--space-sm) var(--space-xl);
+        }
+
+        @media (min-width: 768px) {
+            .hamburger, .mobile-menu {
+                display: none;
+            }
+            .nav-links, .nav-cta {
+                display: flex;
+            }
+            .navbar .container {
+                gap: var(--space-lg);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--overlay-dark), rgba(0, 0, 0, 0.3));
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: var(--space-md);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: var(--text-light);
+            margin-bottom: var(--space-md);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-xl);
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background-color: var(--surface-color);
+            padding: var(--space-lg) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: var(--space-sm);
+        }
+
+        .trust-item svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: var(--space-sm);
+            color: var(--primary-color);
+            stroke-width: 2;
+        }
+
+        .trust-item h4 {
+            margin-bottom: var(--space-xs);
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            min-height: 250px; /* For image fallback */
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        @media (min-width: 992px) {
+            .about-section {
+                flex-direction: row;
+                text-align: left;
+            }
+            .about-content {
+                text-align: left;
+            }
+        }
+
+        /* Highlights/Offerings */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .highlight-card {
+            background-color: var(--surface-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: transform var(--transition-duration) var(--ease-in-out), box-shadow var(--transition-duration) var(--ease-in-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            opacity: 0.7;
+        }
+
+        .highlight-card h3 {
+            margin-top: var(--space-sm);
+            margin-bottom: var(--space-xs);
+        }
+
+        /* Social Proof */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .testimonial-card {
+            background-color: var(--surface-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+            text-align: center;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: var(--space-sm);
+            color: var(--text-dark);
+        }
+
+        .testimonial-card .customer-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            min-height: 200px; /* For image fallback */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--transition-duration) var(--ease-in-out);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Varied aspect ratios for gallery */
+        .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; } /* Default */
+        .gallery-item:nth-child(2) { grid-column: span 1; grid-row: span 2; } /* Taller */
+        .gallery-item:nth-child(3) { grid-column: span 2; grid-row: span 1; } /* Wider */
+        /* For mobile, these will just stack. For larger screens, grid handles it. */
+        @media (min-width: 768px) {
+            .gallery-item:nth-child(1) { grid-row: span 2; } /* Taller */
+            .gallery-item:nth-child(2) { grid-column: span 2; } /* Wider */
+            .gallery-item:nth-child(3) { grid-row: span 2; } /* Taller */
+        }
+
+        /* Location and Hours */
+        .location-hours-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .location-info, .hours-info {
+            background-color: var(--surface-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+            text-align: center;
+        }
+
+        .location-info p, .hours-info p {
+            margin-bottom: var(--space-xs);
+        }
+
+        .location-info strong, .hours-info strong {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 768px) {
+            .location-hours-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Final CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: var(--space-xxl) var(--space-sm);
+            text-align: center;
+            margin-bottom: -var(--space-xxl); /* Overlap with footer slightly */
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner h2 {
+            color: var(--text-light);
+            margin-bottom: var(--space-lg);
+            font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+        }
+
+        .cta-banner .btn-primary {
+            padding: var(--space-md) var(--space-xxl);
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: var(--space-xxl) var(--space-sm) var(--space-md);
+            text-align: center;
+            position: relative;
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            font-weight: 400;
+            position: relative;
+            padding-bottom: var(--space-xxs);
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-color);
+            transition: width var(--transition-duration) var(--ease-in-out);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-contact p {
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-contact a {
+            color: var(--secondary-color);
+        }
+
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: var(--space-xs);
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            margin-top: var(--space-lg);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .footer-brand, .footer-contact, .copyright {
+                margin: 0;
+            }
+            .footer-links {
+                margin-bottom: 0;
+            }
+        }
+
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s var(--ease-in-out), transform 1s var(--ease-in-out);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.slide-from-left {
+            transform: translateX(-50px);
+        }
+
+        .reveal.slide-from-left.is-visible {
+            transform: translateX(0);
+        }
+
+        .reveal.slide-from-right {
+            transform: translateX(50px);
+        }
+
+        .reveal.slide-from-right.is-visible {
+            transform: translateX(0);
+        }
+
+        /* Staggered delays */
+        .delay-01 { transition-delay: 0.1s; }
+        .delay-02 { transition-delay: 0.2s; }
+        .delay-03 { transition-delay: 0.3s; }
+        .delay-04 { transition-delay: 0.4s; }
+        .delay-05 { transition-delay: 0.5s; }
+        .delay-06 { transition-delay: 0.6s; }
+        .delay-07 { transition-delay: 0.7s; }
+        .delay-08 { transition-delay: 0.8s; }
+        .delay-09 { transition-delay: 0.9s; }
+        .delay-10 { transition-delay: 1.0s; }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <a href="#hero" class="navbar-brand">Sangam Cafe</a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#offerings">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://wa.me/911234567899" target="_blank" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: var(--space-xs);">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    WhatsApp Now
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#offerings">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a href="https://wa.me/911234567899" target="_blank" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: var(--space-xs);">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                WhatsApp Now
+            </a>
+        </li>
+    </ul>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <img src="https://images.unsplash.com/photo-1689956189183-9a4387f03d6c?q=80&w=1600&auto=format&fit=crop"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.minHeight='100vh';"
+             alt="Cozy cafe interior with warm lighting" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="reveal fade-up">Experience Culinary Bliss at Sangam Cafe</h1>
+            <p class="reveal fade-up delay-02">Where every dish tells a story of tradition and taste in Chembur.</p>
+            <div class="hero-actions">
+                <a href="#offerings" class="btn btn-primary reveal fade-up delay-04">Explore Our Menu</a>
+                <a href="#contact" class="btn btn-secondary reveal fade-up delay-05">Find Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item reveal fade-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h4>Fresh Ingredients</h4>
+                <p>Locally sourced, highest quality.</p>
+            </div>
+            <div class="trust-item reveal fade-up delay-02">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8z"></path><path d="M6 1v3"></path><path d="M10 1v3"></path><path d="M14 1v3"></path></svg>
+                <h4>Artisan Coffee</h4>
+                <p>Perfectly brewed, rich aromas.</p>
+            </div>
+            <div class="trust-item reveal fade-up delay-04">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3 3 3 0 0 0 3-3V5a3 3 0 0 0-3-3z"></path><path d="M5 9.5a8.5 8.5 0 0 0 14 0"></path><path d="M12 17v4"></path><path d="M8 21h8"></path></svg>
+                <h4>Cozy Ambiance</h4>
+                <p>Relax and unwind in comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Story Section -->
+    <section class="about-section" id="about">
+        <div class="container reveal slide-from-left">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1685698911461-55d208c67476?q=80&w=1600&auto=format&fit=crop"
+                     onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.minHeight='250px';"
+                     alt="A barista preparing coffee with precision.">
+            </div>
+            <div class="about-content reveal fade-up delay-02">
+                <div class="eyebrow">Our Story</div>
+                <h2>More Than Just a Cafe, It's an Experience.</h2>
+                <p>Welcome to Sangam Cafe, a cherished part of Sangam Hotel in Chembur. We believe in creating more than just meals; we craft moments. Our journey began with a simple passion: to bring people together over exceptional food and coffee, blended with the warmth of Indian hospitality.</p>
+                <p>Every ingredient is carefully selected, every dish prepared with love, and every cup of coffee brewed to perfection. We invite you to step into our world, relax, and savor the rich flavors and inviting atmosphere that define Sangam Cafe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights/Offerings Section -->
+    <section id="offerings">
+        <div class="container text-center">
+            <div class="eyebrow reveal fade-up">Our Specialties</div>
+            <h2 class="reveal fade-up delay-01 mb-lg">Discover Our Delicious Offerings</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card reveal fade-up delay-02">
+                    <h3>Gourmet Breakfast</h3>
+                    <p>Start your day right with our freshly prepared breakfast options, from fluffy pancakes to traditional Indian delights.</p>
+                </div>
+                <div class="highlight-card reveal fade-up delay-03">
+                    <h3>Signature Coffee Blends</h3>
+                    <p>Indulge in our expertly roasted and brewed coffee, a perfect blend of rich aromas and smooth taste.</p>
+                </div>
+                <div class="highlight-card reveal fade-up delay-04">
+                    <h3>Delightful Desserts</h3>
+                    <p>Treat yourself to our exquisite selection of cakes, pastries, and sweet treats, baked fresh daily.</p>
+                </div>
+                <div class="highlight-card reveal fade-up delay-05">
+                    <h3>Quick Bites & Snacks</h3>
+                    <p>Perfect for a light meal or a quick snack, our menu features a variety of sandwiches, wraps, and savory pastries.</p>
+                </div>
+                <div class="highlight-card reveal fade-up delay-06">
+                    <h3>Lunch Specials</h3>
+                    <p>Join us for a satisfying lunch with our rotating specials, offering a taste of local and international flavors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section>
+        <div class="container text-center">
+            <div class="eyebrow reveal fade-up">What Our Guests Say</div>
+            <h2 class="reveal fade-up delay-01 mb-lg">Hear From Our Happy Customers</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal slide-from-left delay-02">
+                    <p>"The best coffee in Chembur! The ambiance is so relaxing, and the staff are always welcoming. A perfect spot for my morning ritual."</p>
+                    <p class="customer-name">- Priya Sharma</p>
+                </div>
+                <div class="testimonial-card reveal fade-up delay-04">
+                    <p>"I absolutely love their breakfast spread. Fresh, delicious, and a great variety. Sangam Cafe has become my go-to place for meetings."</p>
+                    <p class="customer-name">- Rohan Patel</p>
+                </div>
+                <div class="testimonial-card reveal slide-from-right delay-06">
+                    <p>"Such a cozy and charming place! Their desserts are heavenly, and the service is impeccable. Highly recommend for a relaxed evening."</p>
+                    <p class="customer-name">- Anjali Singh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container text-center">
+            <div class="eyebrow reveal fade-up">Moments Captured</div>
+            <h2 class="reveal fade-up delay-01 mb-lg">A Glimpse Into Our Cafe</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal fade-up delay-02">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop"
+                         onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.minHeight='200px';"
+                         alt="Coffee art in a cup">
+                </div>
+                <div class="gallery-item reveal fade-up delay-03">
+                    <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?q=80&w=1600&auto=format&fit=crop"
+                         onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.minHeight='200px';"
+                         alt="Delicious pastries and coffee on a table">
+                </div>
+                <div class="gallery-item reveal fade-up delay-04">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop"
+                         onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.minHeight='200px';"
+                         alt="A variety of baked goods and coffee">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location and Hours Section -->
+    <section id="contact">
+        <div class="container text-center">
+            <div class="eyebrow reveal fade-up">Visit Us</div>
+            <h2 class="reveal fade-up delay-01 mb-lg">Your Table Awaits in Chembur</h2>
+            <div class="location-hours-grid">
+                <div class="location-info reveal slide-from-left delay-02">
+                    <h3>Our Location</h3>
+                    <p><strong>Sangam Hotel Cafe</strong></p>
+                    <p>Chembur, Mumbai, Maharashtra</p>
+                    <p>India</p>
+                    <a href="https://www.google.com/maps/search/Sangam+Hotel+Chembur" target="_blank" class="btn btn-secondary">Get Directions</a>
+                </div>
+                <div class="hours-info reveal slide-from-right delay-03">
+                    <h3>Opening Hours</h3>
+                    <p><strong>Monday - Saturday:</strong> 8:00 AM - 10:00 PM</p>
+                    <p><strong>Sunday:</strong> 9:00 AM - 9:00 PM</p>
+                    <p>We look forward to serving you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="cta-banner">
+        <div class="container text-center">
+            <h2 class="reveal fade-up">Ready for a Taste of Excellence?</h2>
+            <a href="https://wa.me/911234567899" target="_blank" class="btn btn-primary reveal fade-up delay-02">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: var(--space-sm);">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                Chat with us on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <a href="#hero" class="footer-brand">Sangam Cafe</a>
+                <p>Chembur, Mumbai, Maharashtra</p>
+                <p>Phone: <a href="tel:+911234567899">1234567899</a></p>
+                <p>
+                    <a href="https://wa.me/911234567899" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#offerings">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <p class="copyright">© 2023 Sangam Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation Bar Scroll Effect
+        const mainNav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('nav-scrolled');
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.querySelectorAll('#mobileMenu a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll Animations with IntersectionObserver
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of element visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
