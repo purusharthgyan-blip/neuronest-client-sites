@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam Hotel - Your Perfect Getaway in Chembur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Design Token System */
+        :root {
+            /* Colors */
+            --primary-color: #6B2A2A; /* Deep warm maroon */
+            --primary-color-rgb: 107, 42, 42; /* RGB values for primary-color */
+            --secondary-color: #EAD7BD; /* Light warm beige */
+            --accent-color: #DAA520; /* Golden ochre */
+            --text-dark: #333333;
+            --text-dark-rgb: 51, 51, 51; /* RGB values for text-dark */
+            --text-light: #F9F7F5;
+            --text-medium: #666666;
+            --border-color: #E0E0E0;
+            --bg-dark: #1A1A1A;
+            --bg-light: #FDFDFD;
+            --surface-color: #FFFFFF;
+            --gradient-start: #6B2A2A; /* Primary for gradient start */
+            --gradient-end: #8D4646;   /* Slightly lighter/redder maroon for gradient end */
+
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+
+            /* Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+
+            /* Box Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --shadow-accent: 0 4px 16px rgba(218, 165, 32, 0.4); /* Accent color shadow for buttons */
+
+            /* Transitions */
+            --ease-in-out-quad: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-speed: 0.3s;
+
+            /* Nav Height */
+            --nav-height: 80px;
+        }
+
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body.no-scroll { /* For mobile menu */
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw + 1rem, 5rem); }
+        h2 { font-size: clamp(2rem, 4vw + 1rem, 3.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-medium);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed) var(--ease-in-out-quad);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative; /* For scroll animations */
+        }
+
+        /* Scroll Anchor Fix */
+        section[id] {
+            scroll-margin-top: calc(var(--nav-height) + 20px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all var(--transition-speed) var(--ease-in-out-quad);
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--text-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%) skewX(-30deg);
+            transition: transform var(--transition-speed) var(--ease-in-out-quad);
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(100%) skewX(-30deg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-icon {
+            margin-right: var(--spacing-xs);
+            width: 1.2em;
+            height: 1.2em;
+            fill: currentColor;
+        }
+
+        /* Eyebrow Tags */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+            color: var(--primary-color);
+            padding: 0.4rem var(--spacing-sm);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-color);
+            border-radius: var(--radius-full);
+            margin-right: 0.5rem;
+        }
+
+        .eyebrow-secondary { /* For sections with different background, e.g., secondary-color */
+            background-color: rgba(var(--text-dark-rgb), 0.1);
+            color: var(--text-dark);
+        }
+
+        .eyebrow-secondary::before {
+            background-color: var(--text-dark);
+        }
+
+        /* Navigation Bar */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--spacing-lg);
+            transition: box-shadow var(--transition-speed) var(--ease-in-out-quad), background-color var(--transition-speed) var(--ease-in-out-quad);
+        }
+
+        .main-nav.scrolled {
+            box-shadow: var(--shadow-md);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-logo:hover {
+            color: var(--primary-color); /* Keep logo color consistent on hover */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            position: relative;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed) var(--ease-in-out-quad);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            margin-left: var(--spacing-lg);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001; /* Above mobile menu */
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: var(--radius-full);
+            transition: all var(--transition-speed) var(--ease-in-out-quad);
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            transition: transform var(--transition-speed) var(--ease-in-out-quad);
+            z-index: 999;
+            padding-top: var(--nav-height); /* Push content below nav */
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .mobile-menu .nav-links a {
+            font-size: 1.5rem;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .mobile-menu .nav-cta {
+            margin-top: var(--spacing-xl);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--nav-height); /* Offset for fixed nav */
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            padding: var(--spacing-md);
+        }
+
+        .hero h1 {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background-color: var(--bg-light);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .trust-item svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--primary-color);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .trust-item p {
+            font-weight: 500;
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex; /* For image fallback */
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+        }
+        
+        /* Highlights/Offerings */
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .offering-card {
+            background-color: var(--surface-color);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-speed) var(--ease-in-out-quad), box-shadow var(--transition-speed) var(--ease-in-out-quad);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .offering-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .offering-card svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--primary-color);
+            stroke-width: 2;
+            fill: none;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Social Proof (Testimonials) */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .testimonial-card {
+            background-color: var(--surface-color);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: var(--spacing-sm);
+            display: block;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            display: flex; /* For image fallback */
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-speed) var(--ease-in-out-quad);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Location and Hours */
+        .location-hours-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+        }
+
+        .location-map {
+            background-color: var(--border-color);
+            border-radius: var(--radius-md);
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-medium);
+            font-style: italic;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-xs) 0;
+            border-bottom: 1px dashed var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list li strong {
+            color: var(--primary-color);
+        }
+
+        /* Final CTA Banner */
+        .final-cta {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--text-light);
+            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+
+        .final-cta h2 {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-lg);
+            font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+        }
+
+        .final-cta .btn-primary {
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-size: 1.15rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .footer p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .footer a {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s var(--ease-in-out-quad), transform 0.8s var(--ease-in-out-quad);
+        }
+
+        .animate-on-scroll.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .animate-fade-up.in-view,
+        .animate-slide-left.in-view,
+        .animate-slide-right.in-view {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Staggered delays */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-image-wrapper {
+                min-height: 500px; /* Larger image on desktop */
+            }
+            .location-hours-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .location-map {
+                height: 400px;
+            }
+            .hero p {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .main-nav .nav-links,
+            .main-nav .nav-cta {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .mobile-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+            .main-nav {
+                padding: 0 var(--spacing-md);
+            }
+            .trust-items {
+                grid-template-columns: 1fr;
+            }
+            .offerings-grid, .testimonials-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="main-nav" class="main-nav">
+            <a href="#hero" class="nav-logo">sangam hotel</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#offerings">Offerings</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/911234567899" target="_blank" class="btn btn-primary nav-cta">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l4.93-1.38C8.42 21.5 10.15 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.55 0-3-.4-4.28-1.1l-.3-.18-3.18.89.89-3.18-.18-.3C4.4 15 4 13.55 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                WhatsApp Us
+            </a>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#offerings">Offerings</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/911234567899" target="_blank" class="btn btn-primary nav-cta">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l4.93-1.38C8.42 21.5 10.15 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.55 0-3-.4-4.28-1.1l-.3-.18-3.18.89.89-3.18-.18-.3C4.4 15 4 13.55 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                WhatsApp Us
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <img src="https://images.unsplash.com/photo-1689956189183-9a4387f03d6c?q=80&w=1600&auto=format&fit=crop" 
+                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.color='var(--text-light)'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.style.minHeight='100vh'; this.parentElement.textContent='Hero Image failed to load.';"
+                 alt="Luxurious hotel interior with warm lighting" class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-content animate-fade-up">
+                <h1>Experience Serenity at Sangam Hotel</h1>
+                <p>Your tranquil retreat in the heart of Chembur, offering comfort, culinary delights, and impeccable service.</p>
+                <div class="hero-actions">
+                    <a href="#offerings" class="btn btn-primary animate-fade-up delay-200">Explore Our Rooms</a>
+                    <a href="#contact" class="btn btn-secondary animate-fade-up delay-300">Book A Table</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-bar">
+            <div class="container trust-items">
+                <div class="trust-item animate-fade-up delay-100">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <p>Prime Location</p>
+                </div>
+                <div class="trust-item animate-fade-up delay-200">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+                    <p>Exceptional Service</p>
+                </div>
+                <div class="trust-item animate-fade-up delay-300">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg>
+                    <p>Modern Amenities</p>
+                </div>
+                <div class="trust-item animate-fade-up delay-400">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    <p>Guest Recommended</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="eyebrow animate-fade-up">Our Story</div>
+                <h2 class="animate-fade-up delay-100">A Legacy of Warmth and Hospitality</h2>
+                <div class="about-content">
+                    <div class="about-text animate-slide-left delay-200">
+                        <p>Established in the heart of Chembur, Sangam Hotel has been a cherished landmark for over two decades. We pride ourselves on creating an inviting atmosphere where every guest feels at home, whether they are here for a quick coffee, a lavish meal, or a comfortable stay.</p>
+                        <p>Our commitment to excellence shines through in our meticulously crafted dishes, serene accommodations, and a team dedicated to making your experience unforgettable. We believe in serving not just food and lodging, but moments of joy and relaxation.</p>
+                        <a href="#offerings" class="btn btn-primary">Discover More</a>
+                    </div>
+                    <div class="about-image-wrapper animate-slide-right delay-300">
+                        <img src="https://images.unsplash.com/photo-1685698911461-55d208c67476?q=80&w=1600&auto=format&fit=crop" 
+                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.color='var(--text-light)'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.textContent='Image failed to load.';"
+                             alt="Cozy cafe interior with people enjoying coffee" class="about-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offerings" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="eyebrow animate-fade-up">What We Offer</div>
+                <h2 class="animate-fade-up delay-100">Signature Experiences at Sangam</h2>
+                <div class="offerings-grid">
+                    <div class="offering-card animate-fade-up delay-200">
+                        <svg viewBox="0 0 24 24"><path d="M21 5V3H3v2H2v16h20V5h-1zm-2 2v12H5V7h14zM9 9h6v2H9V9zm0 4h6v2H9v-2z"></path></svg>
+                        <h3>Comfortable Stays</h3>
+                        <p>Relax in our well-appointed rooms, designed for ultimate comfort and tranquility. Perfect for business or leisure.</p>
+                    </div>
+                    <div class="offering-card animate-fade-up delay-300">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2h2v-2h-1l.01-6.17c1.4-.41 2.65-.96 3.77-1.63L19.79 10.2c.13.58.21 1.17.21 1.79 0 4.08-3.05 7.44-7 7.93z"></path></svg>
+                        <h3>Exquisite Dining</h3>
+                        <p>Savor a diverse menu of Indian and international cuisines at our renowned restaurant, prepared with fresh, local ingredients.</p>
+                    </div>
+                    <div class="offering-card animate-fade-up delay-400">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        <h3>Event Hosting</h3>
+                        <p>Host your next corporate event or social gathering in our versatile banquet halls, equipped with modern facilities.</p>
+                    </div>
+                    <div class="offering-card animate-fade-up delay-500">
+                        <svg viewBox="0 0 24 24"><path d="M12 4.5c-1.23 0-2.25.76-2.67 1.83H2v2h7.33C9.75 9.24 10.77 10 12 10s2.25-.76 2.67-1.83H22v-2h-7.33C14.25 5.26 13.23 4.5 12 4.5zM2 16.5h7.33c.42 1.07 1.44 1.83 2.67 1.83s2.25-.76 2.67-1.83H22v-2h-7.33c-.42-1.07-1.44-1.83-2.67-1.83s-2.25.76-2.67 1.83H2v2z"></path></svg>
+                        <h3>Relaxing Cafe</h3>
+                        <p>Unwind at our cozy cafe, serving a selection of premium coffees, teas, and delectable snacks throughout the day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" style="background-color: var(--secondary-color);">
+            <div class="container">
+                <div class="eyebrow eyebrow-secondary animate-fade-up">Guest Reviews</div>
+                <h2 class="animate-fade-up delay-100">What Our Guests Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-fade-up delay-200">
+                        <p>"A truly delightful experience! The staff were incredibly attentive, and the food at their restaurant was simply divine. Highly recommend for anyone visiting Chembur."</p>
+                        <span class="testimonial-author">- Priya Sharma, Mumbai</span>
+                    </div>
+                    <div class="testimonial-card animate-fade-up delay-300">
+                        <p>"Sangam Hotel exceeded my expectations. The rooms were spotless and comfortable, and their cafe served the best filter coffee I've had in a long time. Will definitely be back!"</p>
+                        <span class="testimonial-author">- Rohan Gupta, Delhi</span>
+                    </div>
+                    <div class="testimonial-card animate-fade-up delay-400">
+                        <p>"From check-in to check-out, everything was seamless. The ambience is perfect for both business and family trips. A true gem in Chembur's hospitality scene."</p>
+                        <span class="testimonial-author">- Anjali Singh, Bangalore</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <div class="eyebrow animate-fade-up">Our Spaces</div>
+                <h2 class="animate-fade-up delay-100">A Glimpse Into Sangam</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-fade-up delay-200" style="grid-column: span 2; grid-row: span 2;">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop" 
+                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.color='var(--text-light)'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.textContent='Image failed to load.';"
+                             alt="Delicious coffee latte art">
+                    </div>
+                    <div class="gallery-item animate-fade-up delay-300">
+                        <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?q=80&w=1600&auto=format&fit=crop" 
+                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.color='var(--text-light)'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.textContent='Image failed to load.';"
+                             alt="Elegant dining table setting">
+                    </div>
+                    <div class="gallery-item animate-fade-up delay-400">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop" 
+                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color), var(--secondary-color))'; this.parentElement.style.color='var(--text-light)'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.textContent='Image failed to load.';"
+                             alt="Freshly baked pastries and coffee">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="eyebrow animate-fade-up">Visit Us</div>
+                <h2 class="animate-fade-up delay-100">Find Us in Chembur</h2>
+                <div class="location-hours-grid">
+                    <div class="location-info animate-slide-left delay-200">
+                        <h3>Our Location</h3>
+                        <p>Sangam Hotel</p>
+                        <p>Chembur, Mumbai</p>
+                        <p>Phone: <a href="tel:+911234567899">+91 1234567899</a></p>
+                        <p>Email: <a href="mailto:info@sangamhotel.com">info@sangamhotel.com</a></p>
+                        <div class="location-map">
+                            <!-- Placeholder for a map or simple directions -->
+                            <p>Map coming soon!</p>
+                        </div>
+                    </div>
+                    <div class="hours-info animate-slide-right delay-300">
+                        <h3>Operating Hours</h3>
+                        <ul class="hours-list">
+                            <li><span>Monday:</span> <span>08:00 AM - 10:00 PM</span></li>
+                            <li><span>Tuesday:</span> <span>08:00 AM - 10:00 PM</span></li>
+                            <li><span>Wednesday:</span> <span>08:00 AM - 10:00 PM</span></li>
+                            <li><span>Thursday:</span> <span>08:00 AM - 10:00 PM</span></li>
+                            <li><span>Friday:</span> <span>08:00 AM - 11:00 PM</span></li>
+                            <li><span>Saturday:</span> <span>08:00 AM - 11:00 PM</span></li>
+                            <li><span>Sunday:</span> <span>08:00 AM - 09:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container animate-fade-up">
+                <h2>Ready to Experience Sangam Hotel?</h2>
+                <p>Contact us today to book your stay, reserve a table, or inquire about our event services.</p>
+                <a href="https://wa.me/911234567899" target="_blank" class="btn btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l4.93-1.38C8.42 21.5 10.15 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.55 0-3-.4-4.28-1.1l-.3-.18-3.18.89.89-3.18-.18-.3C4.4 15 4 13.55 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">sangam hotel</div>
+            <p>Address: Chembur, Mumbai</p>
+            <p>Phone: <a href="tel:+911234567899">+91 1234567899</a></p>
+            <p>WhatsApp: <a href="https://wa.me/911234567899" target="_blank">Chat with Us</a></p>
+            <p>&copy; <span id="copyright-year"></span> sangam hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav Scrolled State
+        const mainNav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.querySelectorAll('.nav-links a, .nav-cta');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            document.body.classList.toggle('no-scroll'); // Optional: prevent scrolling when menu is open
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamically set copyright year
+        document.getElementById("copyright-year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
