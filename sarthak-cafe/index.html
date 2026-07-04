@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Cafe - Experience the Richness</title>
+    <meta name="description" content="Sarthak Cafe in Vashinaka, Chembur offers handcrafted coffee, delicious pastries, and a cozy ambiance. Your local favorite spot for a perfect brew.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#4A2C2A', // Deep brown for coffee, primary text
+                        cream: '#F5EFE6',    // Soft off-white for backgrounds, light text
+                        gold: '#B8860B',     // Rich gold for accents, CTAs
+                        'dark-overlay': 'rgba(0, 0, 0, 0.6)', // For hero image overlay
+                        'light-gray': '#F0F0F0', // For subtle background elements
+                        'dark-gray': '#333333', // For secondary dark text
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll reveal animation styles */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body text-dark-gray bg-cream antialiased">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream shadow-md py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="#" class="text-2xl md:text-3xl font-heading text-espresso font-semibold">sarthak cafe</a>
+        <div class="flex items-center space-x-4">
+            <a href="#contact" class="hidden md:block text-espresso hover:text-gold transition-colors duration-300">Contact</a>
+            <a href="https://wa.me/919769894340" target="_blank" class="bg-gold text-white px-5 py-2 rounded-full text-sm md:text-base font-medium flex items-center space-x-2 shadow-md hover:bg-opacity-90 transition-all duration-300 group">
+                <svg class="w-5 h-5 text-cream" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.1882 15.0689C17.062 15.2282 15.3765 16.0355 15.0187 16.1684C14.6609 16.3013 14.3949 16.3813 14.1289 16.3013C13.8629 16.2213 13.0655 15.9554 12.1085 15.1762C11.1515 14.3971 10.4901 13.5186 10.2335 13.2619C9.97693 13.0053 9.77626 12.7214 9.53936 12.4554C9.30246 12.1894 8.70566 11.4586 8.70566 10.6121C8.70566 9.76562 9.07474 9.4349 9.20095 9.1689C9.32715 8.9029 9.49756 8.74246 9.66796 8.57467C9.83836 8.40688 10.0088 8.35133 10.1792 8.35133C10.3585 8.35133 10.5511 8.35933 10.7132 8.35933C10.8753 8.35933 11.0945 8.34333 11.2952 8.59999C11.4959 8.85665 11.724 9.47933 11.7891 9.63976C11.8542 9.79998 11.9021 9.96041 11.814 10.1382C11.7259 10.316 11.6608 10.4184 11.5346 10.5513C11.4084 10.6842 11.274 10.8368 11.1325 10.9972C10.991 11.1576 10.8648 11.2905 10.7386 11.4509C10.6124 11.6113 10.4862 11.7442 10.6387 12.0009C10.7913 12.2575 11.2312 12.9654 11.8542 13.5186C12.3559 13.9712 12.788 14.2458 13.1118 14.3787C13.4355 14.5116 13.6282 14.5036 13.7807 14.3876C13.9333 14.2716 14.2941 14.1462 14.6549 14.6595C15.0157 15.1728 15.0157 15.1728 15.1861 15.3995C15.3565 15.6262 15.5411 15.7348 15.7197 15.8239C15.8983 15.913 16.9238 16.3656 17.1882 16.2052C17.4526 16.0448 17.4526 15.867 17.3875 15.751C17.3224 15.635 17.2573 15.3995 17.1882 15.0689Z" />
+                </svg>
+                <span class="hidden md:inline">WhatsApp Us</span>
+                <span class="md:hidden">Chat</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center text-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1517256037000-85f094c96e38?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-overlay to-transparent"></div>
+            <div class="relative z-10 px-6 py-12 max-w-4xl mx-auto reveal-item">
+                <h1 class="text-5xl md:text-7xl font-heading text-cream leading-tight mb-4 drop-shadow-lg">
+                    Experience the Richness of Sarthak Cafe
+                </h1>
+                <p class="text-lg md:text-xl text-cream opacity-90 mb-8 font-body drop-shadow-md">
+                    Where Every Sip Tells a Story, Right Here in Vashinaka, Chembur.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#offerings" class="bg-gold text-espresso px-8 py-3 rounded-full text-lg font-semibold shadow-xl hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1">
+                        View Our Offerings
+                    </a>
+                    <a href="#about" class="border-2 border-cream text-cream px-8 py-3 rounded-full text-lg font-semibold shadow-xl hover:bg-opacity-80 transition-all duration-300 transform hover:-translate-y-1">
+                        Our Story
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="py-12 bg-cream reveal-item">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg reveal-item hover:shadow-xl transition-shadow duration-300">
+                        <svg class="w-10 h-10 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-espresso mb-2">Handcrafted Quality</h3>
+                        <p class="text-dark-gray opacity-80">Every beverage and bite prepared with passion.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg reveal-item hover:shadow-xl transition-shadow duration-300">
+                        <svg class="w-10 h-10 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-espresso mb-2">Freshly Brewed</h3>
+                        <p class="text-dark-gray opacity-80">Only the finest beans for your perfect cup.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg reveal-item hover:shadow-xl transition-shadow duration-300">
+                        <svg class="w-10 h-10 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-espresso mb-2">Cozy Ambiance</h3>
+                        <p class="text-dark-gray opacity-80">A perfect spot to relax, work, or meet friends.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Story Section -->
+        <section id="about" class="py-16 md:py-24 bg-cream reveal-item">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-heading text-center text-espresso mb-12 reveal-item">Our Story</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/2 mb-8 md:mb-0 reveal-item">
+                        <img src="https://images.unsplash.com/photo-1541167713444-2396105f2c41?q=80&w=800&auto=format&fit=crop" alt="Barista preparing coffee" class="rounded-xl shadow-xl w-full h-80 object-cover">
+                    </div>
+                    <div class="md:w-1/2 reveal-item">
+                        <p class="text-lg leading-relaxed text-dark-gray mb-4">
+                            Sarthak Cafe began with a simple dream: to create a warm, inviting space where the vibrant community of Vashinaka, Chembur could gather over exceptional coffee. We believe in the power of a perfectly brewed cup to brighten days and foster connections.
+                        </p>
+                        <p class="text-lg leading-relaxed text-dark-gray">
+                            From carefully selected beans to handcrafted pastries, every detail at Sarthak Cafe is thoughtfully curated to offer you a moment of pure delight. Come, unwind, and become a part of our story.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights/Offerings Section -->
+        <section id="offerings" class="py-16 md:py-24 bg-light-gray reveal-item">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-heading text-center text-espresso mb-12 reveal-item">Our Specialties</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 10a6 6 0 01-12 0V7a3 3 0 016 0v3a3 3 0 006 0v-3a3 3 0 01-6 0v3z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a4 4 0 100 8 4 4 0 000-8z"></path>
+                            </svg>
+                            <h3 class="text-2xl font-semibold text-espresso">Signature Espresso</h3>
+                        </div>
+                        <p class="text-dark-gray opacity-80">Bold, aromatic, and perfectly balanced. The heart of our coffee experience.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 19H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2z"></path>
+                            </svg>
+                            <h3 class="text-2xl font-semibold text-espresso">Artisan Lattes</h3>
+                        </div>
+                        <p class="text-dark-gray opacity-80">Smooth, creamy, and crafted with beautiful latte art just for you.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h3 class="text-2xl font-semibold text-espresso">Fresh Pastries</h3>
+                        </div>
+                        <p class="text-dark-gray opacity-80">Baked daily, from flaky croissants to decadent cakes – perfect with your coffee.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-4a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v11a2 2 0 01-2 2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M8 16h.01M8 8h.01"></path>
+                            </svg>
+                            <h3 class="text-2xl font-semibold text-espresso">Gourmet Sandwiches</h3>
+                        </div>
+                        <p class="text-dark-gray opacity-80">Light, fresh, and satisfying options for a delightful lunch or snack.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            <h3 class="text-2xl font-semibold text-espresso">Specialty Teas</h3>
+                        </div>
+                        <p class="text-dark-gray opacity-80">A curated selection of the finest teas for a soothing alternative.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.393 9.393L21 21m-2.121-2.121L15 15m-9.393 2.121L3 21m2.121-2.121L9 15m12-9.393L21 3m-2.121 2.121L15 9m-9.393-2.121L3 3m2.121 2.121L9 9"></path>
+                            </svg>
+                            <h3 class="text-2xl font-semibold text-espresso">Seasonal Delights</h3>
+                        </div>
+                        <p class="text-dark-gray opacity-80">Discover new and exciting limited-time offerings throughout the year.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof/Testimonials Section -->
+        <section class="py-16 md:py-24 bg-cream reveal-item">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-heading text-center text-espresso mb-12 reveal-item">What Our Customers Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transition-shadow duration-300">
+                        <p class="text-lg italic text-dark-gray mb-4">"Sarthak Cafe is my go-to spot in Chembur. The coffee is always perfect, and the ambiance is so relaxing. A true gem!"</p>
+                        <p class="font-semibold text-gold">- Priya Sharma</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transition-shadow duration-300">
+                        <p class="text-lg italic text-dark-gray mb-4">"I love their pastries! So fresh and delicious. It's the perfect place for a quick bite or a long chat with friends."</p>
+                        <p class="font-semibold text-gold">- Rohan Mehta</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item hover:shadow-xl transition-shadow duration-300">
+                        <p class="text-lg italic text-dark-gray mb-4">"The staff is incredibly friendly, and they make the best lattes in Vashinaka. Highly recommend Sarthak Cafe for everyone!"</p>
+                        <p class="font-semibold text-gold">- Anjali Singh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-16 md:py-24 bg-light-gray reveal-item">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-heading text-center text-espresso mb-12 reveal-item">Moments at Sarthak Cafe</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="overflow-hidden rounded-xl shadow-lg reveal-item">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop" alt="Coffee cup on wooden table" class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg reveal-item">
+                        <img src="https://images.unsplash.com/photo-1497514440240-3b870f73417a?q=80&w=800&auto=format&fit=crop" alt="Pouring latte art" class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg reveal-item">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Variety of coffee beans" class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg reveal-item">
+                        <img src="https://images.unsplash.com/photo-1507133036814-257dd943c2c8?q=80&w=800&auto=format&fit=crop" alt="Pastries on display" class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg reveal-item">
+                        <img src="https://images.unsplash.com/photo-1504631317654-20a221f7e415?q=80&w=800&auto=format&fit=crop" alt="Cozy cafe interior" class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg reveal-item">
+                        <img src="https://images.unsplash.com/photo-1495474472106-695321550968?q=80&w=800&auto=format&fit=crop" alt="Coffee brewing equipment" class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location and Hours Section -->
+        <section id="contact" class="py-16 md:py-24 bg-cream reveal-item">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl md:text-5xl font-heading text-center text-espresso mb-12 reveal-item">Visit Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item">
+                        <h3 class="text-3xl font-heading text-espresso mb-6">Our Location</h3>
+                        <div class="flex items-start space-x-4 mb-4">
+                            <svg class="w-6 h-6 text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <p class="text-lg text-dark-gray">Vashinaka, Chembur, Mumbai</p>
+                        </div>
+                        <div class="flex items-start space-x-4 mb-6">
+                            <svg class="w-6 h-6 text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <a href="tel:+919769894340" class="text-lg text-dark-gray hover:text-gold transition-colors duration-300">9769894340</a>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.919702209772!2d72.90666695!3d19.07598995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306653f591%3A0xc6d37f8a7e0d3d57!2sChembur%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1701386629983!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-md"></iframe>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-item">
+                        <h3 class="text-3xl font-heading text-espresso mb-6">Hours of Operation</h3>
+                        <ul class="space-y-4 text-lg text-dark-gray">
+                            <li class="flex items-center space-x-4">
+                                <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h.01M16 11h.01M9 15h.01M15 15h.01M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Monday - Friday: <span class="font-medium text-espresso">7:00 AM - 9:00 PM</span></span>
+                            </li>
+                            <li class="flex items-center space-x-4">
+                                <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h.01M16 11h.01M9 15h.01M15 15h.01M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Saturday: <span class="font-medium text-espresso">8:00 AM - 10:00 PM</span></span>
+                            </li>
+                            <li class="flex items-center space-x-4">
+                                <svg class="w-6 h-6 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h.01M16 11h.01M9 15h.01M15 15h.01M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>Sunday: <span class="font-medium text-espresso">8:00 AM - 9:00 PM</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Banner -->
+        <section class="bg-espresso py-16 reveal-item">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-heading text-cream mb-8 drop-shadow-md reveal-item">
+                    Ready for Your Sarthak Cafe Experience?
+                </h2>
+                <a href="https://wa.me/919769894340" target="_blank" class="inline-flex items-center space-x-3 bg-gold text-espresso px-10 py-4 rounded-full text-xl font-semibold shadow-xl hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 reveal-item">
+                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM17.1882 15.0689C17.062 15.2282 15.3765 16.0355 15.0187 16.1684C14.6609 16.3013 14.3949 16.3813 14.1289 16.3013C13.8629 16.2213 13.0655 15.9554 12.1085 15.1762C11.1515 14.3971 10.4901 13.5186 10.2335 13.2619C9.97693 13.0053 9.77626 12.7214 9.53936 12.4554C9.30246 12.1894 8.70566 11.4586 8.70566 10.6121C8.70566 9.76562 9.07474 9.4349 9.20095 9.1689C9.32715 8.9029 9.49756 8.74246 9.66796 8.57467C9.83836 8.40688 10.0088 8.35133 10.1792 8.35133C10.3585 8.35133 10.5511 8.35933 10.7132 8.35933C10.8753 8.35933 11.0945 8.34333 11.2952 8.59999C11.4959 8.85665 11.724 9.47933 11.7891 9.63976C11.8542 9.79998 11.9021 9.96041 11.814 10.1382C11.7259 10.316 11.6608 10.4184 11.5346 10.5513C11.4084 10.6842 11.274 10.8368 11.1325 10.9972C10.991 11.1576 10.8648 11.2905 10.7386 11.4509C10.6124 11.6113 10.4862 11.7442 10.6387 12.0009C10.7913 12.2575 11.2312 12.9654 11.8542 13.5186C12.3559 13.9712 12.788 14.2458 13.1118 14.3787C13.4355 14.5116 13.6282 14.5036 13.7807 14.3876C13.9333 14.2716 14.2941 14.1462 14.6549 14.6595C15.0157 15.1728 15.0157 15.1728 15.1861 15.3995C15.3565 15.6262 15.5411 15.7348 15.7197 15.8239C15.8983 15.913 16.9238 16.3656 17.1882 16.2052C17.4526 16.0448 17.4526 15.867 17.3875 15.751C17.3224 15.635 17.2573 15.3995 17.1882 15.0689Z" />
+                    </svg>
+                    <span>WhatsApp Us Now</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-cream py-10 px-6 md:px-12 text-center text-sm">
+        <div class="container mx-auto max-w-6xl">
+            <p class="mb-2 font-heading text-lg text-gold">sarthak cafe</p>
+            <p class="mb-1">Vashinaka, Chembur, Mumbai</p>
+            <p class="mb-1">Phone: <a href="tel:+919769894340" class="hover:text-gold transition-colors duration-300">9769894340</a></p>
+            <p class="mb-4">WhatsApp: <a href="https://wa.me/919769894340" target="_blank" class="hover:text-gold transition-colors duration-300">Chat with us</a></p>
+            <p>&copy; 2023 sarthak cafe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealItems = document.querySelectorAll('.reveal-item');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of the item must be visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            revealItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
