@@ -83,7 +83,10 @@
     text-decoration: none; font-weight: 700; font-size: 13.5px; box-shadow: var(--shadow-soft);
     transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
   }
-  .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px 5px color-mix(in srgb, var(--color-accent) 55%, transparent), var(--shadow-hover);
+  }
   .hamburger { display: none; background: none; border: none; font-size: 28px; color: var(--color-primary); cursor: pointer; }
   .mobile-menu {
     display: none; flex-direction: column; gap: 18px; background: #fff;
@@ -116,8 +119,12 @@
   }
   .btn-primary:hover::after { animation: shimmer 0.9s ease forwards; }
   .btn-primary:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 16px 36px -8px color-mix(in srgb, var(--color-primary) 70%, transparent);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow:
+      0 0 24px 6px color-mix(in srgb, var(--color-accent) 65%, transparent),
+      0 0 50px 14px color-mix(in srgb, var(--color-primary) 40%, transparent),
+      0 18px 36px -10px color-mix(in srgb, var(--color-primary) 75%, transparent);
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
   }
   .btn-glow { animation: glowPulse 2.4s ease-in-out infinite; }
   .btn-ghost {
@@ -126,7 +133,14 @@
     border: 1.5px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(6px);
   }
-  .btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-3px); }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.24);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow:
+      0 0 22px 6px rgba(255,255,255,0.4),
+      0 0 50px 16px color-mix(in srgb, var(--color-accent) 55%, transparent);
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.3s;
+  }
 
   @keyframes shimmer { 0% { left: -60%; } 100% { left: 130%; } }
   @keyframes glowPulse {
@@ -179,7 +193,7 @@
   .section-head p { color: var(--color-text-muted); font-size: 16px; }
 
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-  .about-grid img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-hover); aspect-ratio: 4/3; object-fit: cover; }
+  .about-grid img { width: 100%; height: 100%; }
   .about-text p { color: var(--color-text-muted); margin-bottom: 18px; }
   .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
   .stat-box { background: var(--color-surface); border-radius: var(--radius-md); padding: 18px; text-align: center; }
@@ -209,7 +223,7 @@
   .testimonial-card .name { font-weight: 700; color: var(--color-primary-dark); font-size: 14px; }
 
   .gallery-grid { column-count: 3; column-gap: 20px; }
-  .gallery-grid img { width: 100%; border-radius: var(--radius-md); margin-bottom: 20px; display: block; box-shadow: var(--shadow-soft); }
+  .gallery-grid img { width: 100%; display: block; }
   @media (max-width: 860px) { .gallery-grid { column-count: 2; } }
   @media (max-width: 560px) { .gallery-grid { column-count: 1; } }
 
@@ -243,8 +257,7 @@
   footer .foot-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 13px; }
   @media (max-width: 700px) { footer .foot-grid { grid-template-columns: 1fr; } }
 
-  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }  .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .reveal.from-left { transform: translateX(-40px); }
   .reveal.from-left.is-visible { transform: translateX(0); }
   .reveal.from-right { transform: translateX(40px); }
@@ -255,6 +268,57 @@
   .stagger-4 { transition-delay: 0.35s; }
   .stagger-5 { transition-delay: 0.45s; }
   .stagger-6 { transition-delay: 0.55s; }
+
+  /* ---------- Universal engagement layer: images, icons, cards react to cursor ---------- */
+  .img-frame { overflow: hidden; display: block; border-radius: var(--radius-lg); }
+  .img-frame img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.7s var(--ease), filter 0.7s var(--ease);
+  }
+  .img-frame:hover img { transform: scale(1.09) rotate(-0.3deg); filter: brightness(1.06) saturate(1.15); }
+
+  .gallery-grid .img-frame { margin-bottom: 20px; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); transition: box-shadow 0.4s var(--ease); }
+  .gallery-grid .img-frame:hover { box-shadow: var(--shadow-hover); }
+
+  .logo { transition: transform 0.3s var(--ease); }
+  .logo:hover { transform: scale(1.04); }
+  .logo:hover .material-symbols-outlined { animation: iconWiggle 0.5s var(--ease); }
+  @keyframes iconWiggle { 0%,100% { transform: rotate(0deg); } 30% { transform: rotate(-12deg); } 60% { transform: rotate(10deg); } }
+
+  .trust-item { cursor: default; transition: transform 0.35s var(--ease); }
+  .trust-item:hover { transform: translateY(-6px); }
+  .trust-item .material-symbols-outlined { transition: transform 0.4s var(--ease), color 0.4s var(--ease); }
+  .trust-item:hover .material-symbols-outlined { transform: scale(1.18) rotate(-6deg); color: var(--color-accent); }
+
+  .offer-card .icon-wrap { transition: transform 0.45s var(--ease); }
+  .offer-card:hover .icon-wrap { transform: rotate(-8deg) scale(1.1); }
+
+  .stat-box { transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); cursor: default; }
+  .stat-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+
+  .testimonial-card { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+  .testimonial-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+  .testimonial-card .stars { transition: transform 0.3s var(--ease); }
+  .testimonial-card:hover .stars { transform: scale(1.08); }
+
+  .location-map { transition: filter 0.4s var(--ease); }
+  .location-map:hover { filter: brightness(1.08); }
+  .location-map .material-symbols-outlined { transition: transform 0.5s var(--ease); animation: softFloat 3s ease-in-out infinite; }
+  .location-map:hover .material-symbols-outlined { transform: scale(1.15); }
+  @keyframes softFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+  footer a { position: relative; }
+  footer a::after {
+    content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
+    background: currentColor; transition: width 0.3s var(--ease);
+  }
+  footer a:hover::after { width: 100%; }
+
+  nav.links a .material-symbols-outlined, .hamburger { transition: transform 0.3s var(--ease); }
+  .hamburger:hover { transform: rotate(90deg); }
+
+  .scroll-cue { transition: transform 0.3s var(--ease), opacity 0.3s var(--ease); cursor: pointer; }
+  .scroll-cue:hover { transform: translateX(-50%) scale(1.15); opacity: 0.8; }
 </style>
 </head>
 <body>
@@ -342,7 +406,9 @@
         </div>
       </div>
       <div class="reveal from-right">
-        <img src="{{about_image}}" alt="{{business_name}}" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--color-primary), var(--color-secondary))'; this.parentElement.style.minHeight='320px'; this.parentElement.style.borderRadius='var(--radius-lg)';" />
+        <div class="img-frame" style="aspect-ratio: 4/3; box-shadow: var(--shadow-hover);">
+          <img src="{{about_image}}" alt="{{business_name}}" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--color-primary), var(--color-secondary))'; this.parentElement.style.minHeight='320px';" />
+        </div>
       </div>
     </div>
   </div>
@@ -417,11 +483,11 @@
       <h2>{{gallery_heading}}</h2>
     </div>
     <div class="gallery-grid reveal">
-      <img src="{{gallery_image_1}}" alt="{{business_name}}" onerror="this.style.display='none';" />
-      <img src="{{gallery_image_2}}" alt="{{business_name}}" onerror="this.style.display='none';" />
-      <img src="{{gallery_image_3}}" alt="{{business_name}}" onerror="this.style.display='none';" />
-      <img src="{{gallery_image_4}}" alt="{{business_name}}" onerror="this.style.display='none';" />
-      <img src="{{gallery_image_5}}" alt="{{business_name}}" onerror="this.style.display='none';" />
+      <div class="img-frame"><img src="{{gallery_image_1}}" alt="{{business_name}}" onerror="this.style.display='none';" /></div>
+      <div class="img-frame"><img src="{{gallery_image_2}}" alt="{{business_name}}" onerror="this.style.display='none';" /></div>
+      <div class="img-frame"><img src="{{gallery_image_3}}" alt="{{business_name}}" onerror="this.style.display='none';" /></div>
+      <div class="img-frame"><img src="{{gallery_image_4}}" alt="{{business_name}}" onerror="this.style.display='none';" /></div>
+      <div class="img-frame"><img src="{{gallery_image_5}}" alt="{{business_name}}" onerror="this.style.display='none';" /></div>
     </div>
   </div>
 </section>
